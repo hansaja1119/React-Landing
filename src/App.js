@@ -2,12 +2,12 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./ThemeContext";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Analytics from "./components/About";
-import Newsletter from "./components/Contact";
-import Cards from "./components/Cards";
+import Hero from "./pages/Hero";
+import Analytics from "./pages/About";
+import Newsletter from "./pages/Contact";
+import Cards from "./pages/Cards";
 import Footer from "./components/Footer";
-import RegisterForm from "./components/RegisterForm";
+import RegisterForm from "./pages/RegisterForm";
 import Team from "./components/Team";
 
 function App() {
@@ -17,11 +17,9 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Hero />} />
-          {/* About Section with Nested Routes */}
           <Route path="/about" element={<Analytics />}>
             <Route path="team" element={<Team />} />
           </Route>
-          {/* Other Top-Level Routes */}
           <Route path="/contact" element={<Newsletter />} />
           <Route path="/pricing" element={<Cards />} />
           <Route path="/login" element={<RegisterForm />} />
